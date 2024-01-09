@@ -1,4 +1,4 @@
-package Classes;
+package com.example.msa.Classes;
 
 public class Main {
 
