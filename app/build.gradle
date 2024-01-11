@@ -5,6 +5,14 @@ plugins {
 }
 
 android {
+
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+        resources.excludes.add("notice.txt")
+        resources.excludes.add("license.txt")
+        resources.excludes.add("META-INF/spring/aot.factories")
+    }
+
     namespace 'com.example.msa'
     compileSdk 34
     viewBinding
@@ -28,32 +36,38 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     buildFeatures {
         viewBinding true
+    }
+    buildscript {
+        repositories {
+            google()
+            jcenter()
+        }
     }
 }
 
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
-    implementation 'androidx.navigation:navigation-fragment:2.7.4'
-    implementation 'androidx.navigation:navigation-ui:2.7.4'
+    implementation 'androidx.navigation:navigation-fragment:2.7.6'
+    implementation 'androidx.navigation:navigation-ui:2.7.6'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.1.0'
-    implementation 'org.springframework.boot:spring-boot-starter-web:3.1.0'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.1.5'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.1.5'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:3.1.0'
-    implementation 'org.postgresql:postgresql:42.5.4'
-    implementation 'org.springframework.boot:spring-boot-starter-validation:3.1.0'
-    implementation 'org.springframework.boot:spring-boot-starter-security:3.1.0'
+    implementation 'org.postgresql:postgresql:42.6.0'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:3.1.5'
+    implementation 'org.springframework.boot:spring-boot-starter-security:3.1.5'
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
     implementation 'io.jsonwebtoken:jjwt-impl:0.11.5'
     implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
