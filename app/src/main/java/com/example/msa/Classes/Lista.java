@@ -1,14 +1,12 @@
-package Classes;
+package com.example.msa.Classes;
 
 import java.util.ArrayList;
 
 public class Lista {
 
-    private ArrayList<Reteta> Lista_retete;
+    private static ArrayList<Reteta> Lista_retete = new ArrayList<>();
 
-    public Lista() {
-        this.Lista_retete = new ArrayList<>();
-    }
+    public Lista() {}
 
     public void AddRecipe(Reteta r) {
         if(Lista_retete.contains(r))
@@ -25,6 +23,9 @@ public class Lista {
         for (Reteta a : Lista_retete)
             s = s + a + "\n";
         return s;
+    }
+    public ArrayList<Reteta> getList() {
+        return Lista_retete;
     }
 }
 
