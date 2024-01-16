@@ -22,6 +22,44 @@
 
     <include layout="@layout/content_main" />
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center" >
+            <TextView
+                android:id="@+id/labelReteleMele"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Retetele mele"
+                android:clickable="true"
+                android:onClick="onReteteleMeleClick"
+                android:padding="16dp"/>
+
+            <TextView
+                android:id="@+id/labelFavorite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Favorite"
+                android:clickable="true"
+                android:onClick="onFavoriteClick"
+                android:padding="16dp"/>
+
+            <TextView
+                android:id="@+id/labelDescopera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Descopera"
+                android:clickable="true"
+                android:onClick="onDescoperaClick"
+                android:padding="16dp"/>
+
+        </LinearLayout>
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
@@ -29,6 +67,8 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@android:drawable/ic_menu_add"
+        app:maxImageSize="48dp"
+        android:contentDescription="Add something"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

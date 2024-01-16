@@ -13,6 +13,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.example.msa.databinding.ActivityMainBinding;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        
 
         setSupportActionBar(binding.appBarMain.toolbar);
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +49,31 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        binding.drawerLayout.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            // Handle click for "Retetele mele"
+            Toast.makeText(MainActivity.this, "Retetele mele clicked", Toast.LENGTH_SHORT).show();
+        }
+        });
+
+        /*
+        binding.labelFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle click for "Favorite"
+                Toast.makeText(MainActivity.this, "Favorite clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        binding.labelDescopera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Handle click for "Descopera"
+                Toast.makeText(MainActivity.this, "Descopera clicked", Toast.LENGTH_SHORT).show();
+            }
+        }); */
     }
 
     @Override
