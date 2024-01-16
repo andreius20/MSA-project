@@ -1,10 +1,13 @@
 package com.example.msa.Classes;
 
 public class Reteta {
+
+    private String name;
     private String ingredients;
     private String preparation;
 
-    public Reteta(String ingredients,String preparation) {
+    public Reteta(String name,String ingredients,String preparation) {
+        this.name = name;
         this.ingredients = ingredients;
         this.preparation = preparation;
     }

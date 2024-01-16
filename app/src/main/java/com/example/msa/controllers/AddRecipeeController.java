@@ -30,4 +30,8 @@ public class AddRecipeeController {
         a.AddRecipe(r);
     }
 
+    @PutMapping
+    public void showList(Lista a) {
+        System.out.println(a);
+    }
 }
