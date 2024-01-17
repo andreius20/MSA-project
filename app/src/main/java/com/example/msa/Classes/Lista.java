@@ -21,7 +21,7 @@ public class Lista {
     public String toString() {
         String s = "";
         for (Reteta a : Lista_retete)
-            s = s + a + "\n";
+            s = s +"Ingrediente:\n" +  a + "\n";
         return s;
     }
     public ArrayList<Reteta> getList() {
