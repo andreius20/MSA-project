@@ -42,13 +42,34 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
+        /*mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
+        NavigationUI.setupWithNavController(navigationView, navController);*/
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            // Handle navigation item clicks here
+            int id = item.getItemId();
+
+            if (id == R.id.nav_home) {
+                // Handle click for "Home" or any other item
+                Toast.makeText(MainActivity.this, "Home clicked", Toast.LENGTH_SHORT).show();
+                // You can also start a new activity or navigate to a new fragment here
+            }
+
+            // Add more conditions for other items as needed
+
+            // Close the drawer after handling the click
+            binding.drawerLayout.closeDrawer(GravityCompat.START);
+
+            return true;
+        }
+    });
+
 
         binding.drawerLayout.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -58,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         }
         });
 
-        /*
+
         binding.labelFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 // Handle click for "Descopera"
                 Toast.makeText(MainActivity.this, "Descopera clicked", Toast.LENGTH_SHORT).show();
             }
-        }); */
+        });
     }
 
     @Override
